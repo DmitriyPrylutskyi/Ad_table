@@ -9,11 +9,13 @@
           <v-card-text>
             <v-form ref="form" v-model="valid" validation>
               <v-text-field
-                prepend-icon="person"
+                prepend-icon="email"
                 name="email"
                 label="Email"
                 type="email"
                 :rules="emailRules"
+                required
+                validate-on-blur
                 v-model="email"
               >
               </v-text-field>
@@ -25,6 +27,8 @@
                 type="password"
                 :counter="6"
                 :rules="passwordRules"
+                required
+                validate-on-blur
                 v-model="password"
               >
               </v-text-field>
