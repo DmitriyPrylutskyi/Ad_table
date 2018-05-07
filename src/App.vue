@@ -25,7 +25,15 @@
         @click="drawer=!drawer"
       >
       </v-toolbar-side-icon>
-      <v-toolbar-title>Ad Table</v-toolbar-title>
+      <v-toolbar-title>
+        <router-link
+          :to="{ name: 'Home' }"
+          tag="span"
+          class="pointer"
+        >
+          Ad Table
+        </router-link>
+      </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
        <v-btn
@@ -63,3 +71,9 @@ export default {
   name: 'App'
 }
 </script>
+
+<style scoped>
+  .pointer {
+    cursor: pointer;
+  }
+</style>
