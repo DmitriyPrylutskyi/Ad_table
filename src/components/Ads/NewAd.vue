@@ -92,9 +92,10 @@
             const ad = {
               title: this.title,
               description: this.description,
-              promo: this.promo
+              promo: this.promo,
+              imageSrc: '/static/img/image-1.png'
             };
-            console.log(ad);
+            this.$store.dispatch('addAd', ad)
           }
         }
       }

@@ -4,13 +4,13 @@
       <v-flex xs12>
         <v-card>
             <v-card-media
-              src="/static/img/image-1.png"
+              :src="ad.imageSrc"
               height="200px">
             </v-card-media>
             <v-card-text>
               <div>
-                <h2 class="text--primary">First ad</h2>
-                <p>Hello i am description</p>
+                <h2 class="text--primary">{{ad.title}}</h2>
+                <p>{{ad.description}}</p>
               </div>
             </v-card-text>
             <v-card-actions>
@@ -26,7 +26,19 @@
 
 <script>
     export default {
-        name: "Ad"
+      name: "Ad",
+      props: ['id'],
+      data () {
+        return {
+
+        }
+      },
+      computed: {
+        ad () {
+          const id = this.id;
+          return this.$store.getters.adById(id)
+        }
+      }
     }
 </script>
 
