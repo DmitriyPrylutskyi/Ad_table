@@ -5,7 +5,7 @@
         <h1 class="text--secondary mb-3">My Ads</h1>
         <v-card
           class="elevation-12 mb-5"
-          v-for="ad in ads"
+          v-for="ad in myAds"
           :key="ad.id"
         >
           <v-layout>
@@ -36,34 +36,18 @@
 
 <script>
     export default {
+      name: "ListAd",
       data () {
         return {
-          ads: [
-            {
-              title: 'First ad',
-              description: 'Hello i am description',
-              promo: false,
-              imageSrc: '/static/img/image-1.png',
-              id: '1'
-            },
-            {
-              title: 'Second ad',
-              description: 'Hello i am description',
-              promo: true,
-              imageSrc: '/static/img/image-2.png',
-              id: '2'
-            },
-            {
-              title: 'Third ad',
-              description: 'Hello i am description',
-              promo: true,
-              imageSrc: '/static/img/image-3.png',
-              id: '3'
-            }
-          ]
+
         }
       },
-      name: "ListAd"
+      computed : {
+        myAds () {
+          return this.$store.getters.myAds
+        }
+      }
+
     }
 </script>
 
